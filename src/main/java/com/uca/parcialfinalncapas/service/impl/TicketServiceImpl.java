@@ -5,7 +5,7 @@ import com.uca.parcialfinalncapas.dto.request.TicketUpdateRequest;
 import com.uca.parcialfinalncapas.dto.response.TicketResponse;
 import com.uca.parcialfinalncapas.dto.response.TicketResponseList;
 import com.uca.parcialfinalncapas.entities.Ticket;
-import com.uca.parcialfinalncapas.entities.User;
+import com.uca.parcialfinalncapas.entities.UserApi;
 import com.uca.parcialfinalncapas.exceptions.BadTicketRequestException;
 import com.uca.parcialfinalncapas.exceptions.TicketNotFoundException;
 import com.uca.parcialfinalncapas.exceptions.UserNotFoundException;
@@ -96,4 +96,10 @@ public class TicketServiceImpl implements TicketService {
     public List<TicketResponseList> getAllTickets() {
         return TicketMapper.toDTOList(ticketRepository.findAll());
     }
+
+    @Override
+    public List<TicketResponseList> getAllTicketsUser(long id){
+        return TicketMapper.toDTOList(ticketRepository.findByusuarioId(id));
+    }
+
 }

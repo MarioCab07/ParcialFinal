@@ -45,4 +45,6 @@ public interface TicketService {
      * @return una lista de todos los tickets
      */
     List<TicketResponseList> getAllTickets();
+
+    List<TicketResponseList> getAllTicketsUser(long id);
 }
