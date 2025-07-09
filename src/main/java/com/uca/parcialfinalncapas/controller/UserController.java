@@ -48,7 +48,7 @@ public class UserController {
         UserResponse createdUser = authService.register(user);
         return ResponseBuilderUtil.buildResponse("Usuario creado correctamente", HttpStatus.CREATED, createdUser);
     }
-    @PreAuthorize("hasAnyRole('TECH','USER)")
+    @PreAuthorize("hasAnyRole('TECH','USER')")
     @PutMapping
     public ResponseEntity<GeneralResponse> updateUser(@Valid @RequestBody UserUpdateRequest user) {
         UserResponse updatedUser = userService.update(user);
