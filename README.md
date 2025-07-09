@@ -65,3 +65,7 @@ _Si van a crear mas endpoints como el login o registrarse recuerden actualizar p
 - [ ] Probar todos los flujos con Postman/Insomnia/Bruno.
 - [ ] Mostrar que los roles se comportan correctamente.
 - [ ] Incluir usuarios de prueba (`user`, `tech`) y contraseñas.
+
+- [ ] Usuarios prueba
+mario@test.com 12345678Aa USER
+gaby@test.com 12345678Aa TECH
