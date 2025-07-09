@@ -43,7 +43,7 @@ public class TicketController {
         return ResponseBuilderUtil.buildResponse("Ticket found", HttpStatus.OK, ticket);
     }
 
-    @PreAuthorize("hasAnyRole('TECH','USER)")
+    @PreAuthorize("hasAnyRole('TECH','USER')")
     @PostMapping
     public ResponseEntity<GeneralResponse> createTicket(@Valid @RequestBody TicketCreateRequest ticket) {
         TicketResponse createdTicket = ticketService.createTicket(ticket);
