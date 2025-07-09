@@ -69,3 +69,5 @@ _Si van a crear mas endpoints como el login o registrarse recuerden actualizar p
 - [ ] Usuarios prueba
 mario@test.com 12345678Aa USER
 gaby@test.com 12345678Aa TECH
+
+Los commites tardios fueron para solucionar conflicto de id en sql.data y asegurar que siempre se creen
