@@ -8,6 +8,8 @@ docker-compose up --build
 Backend en: http://localhost:8181
 Base de datos PostgreSQL en: localhost:5432
 
+#Application.yml
+Se espera que para el password se coloque como admin
 ##Probar la API con Postman
 
 Crear usuario
