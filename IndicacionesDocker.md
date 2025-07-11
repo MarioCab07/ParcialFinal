@@ -1,25 +1,35 @@
-##Primero se debe empaquetar el proyecto
-mvn clean package
+## Paso preliminar:
+* Desde la raiz del proyecto dirigirse a `src/main/resources`, en application.yml eliminar la linea 19.
+* Siguiendo en application.yml cambiar la url de datasource de `jdbc:postgresql://localhost:5432/supportdb` a `jdbc:postgresql://localhost:5432/support_db`
+* Cambiar username a: `soporte_user`
+* Cambiar password a: `soporte_pass`
+* Abrir una terminal en la raiz del proyecto.
+* Abrir docker desktop o iniciar el servicio de docker.
+  
 
-##Luego se debe levantar los contenedores
-docker-compose up --build
+## Primero se debe empaquetar el proyecto
+* Desde la terminal abierta previamente ejecutar (Windows 11): `.\mvnw clean package -DskipTests`
 
-##Verificar que todo corra correctamente
-Backend en: http://localhost:8181
-Base de datos PostgreSQL en: localhost:5432
+## Luego se debe levantar los contenedores en 2 pasos para garantizar que existe la Base de Datos antes que la API
+- `docker-compose up -d postgres`
+- `docker-compose up app`
 
-#Application.yml
-Se espera que para el password se coloque como admin
-##Probar la API con Postman
 
-Crear usuario
+## Verificar que todo corra correctamente
+-Backend en: http://localhost:8181
+-Base de datos PostgreSQL en: localhost:5432
+
+
+## Probar la API con Postman
+
+```Crear usuario
 POST http://localhost:8181/api/users
 {
 "nombre": "Gaby Valiente",
 "correo": "Gaby@example.com",
 "password": "admin123",
 "nombreRol": "USER"
-}
+}```
 
 Crear técnico
 POST http://localhost:8181/api/users
@@ -46,4 +56,6 @@ http://localhost:8181/api/users/all
 
 Url para obtener todos los tickets de la base de datos
 http://localhost:8181/api/tickets
+```
+
 
